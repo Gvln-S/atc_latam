@@ -3,17 +3,51 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>ATC LATAM | Revisoría Fiscal y Auditoría Legal</title>
-
     <link rel="stylesheet" href="css/styles.css">
-
     <script type="module" src="js_dist/main.js"></script>
   </head>
   <body>
     <header>
+      <article class="atc_logo">
+        <button>
+          <div class="burger_menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </button>
+        <a>
+          <img src="img/general/atc_icon.png">
+        </a>
+      </article>
 
+      <article class="search_button">
+        <button>
+          <div></div>
+        </button>
+      </article>
     </header>
+
+    <main>
+      <section class="boletines_section">
+        <div class="boletines_titles">
+          <h2 class="h2_module_header">BIENVENIDO A ATC LATAM</h2>
+          <h1 class="h1_main_title">Mantente al tanto de las últimas noticias con nuestros Boletines</h1>
+        </div>
+        
+        <div class="carrusel_viewport">
+          <div id="carrusel_track" class="carrusel_track"></div>
+        </div>
+
+        <div class="carrusel_controls">
+          <button id="pause_button" class="ctrl_btn pause_button"></button>
+          <button id="prev_button" class="ctrl_btn prev_button"></button>
+          <button id="next_button" class="ctrl_btn next_button"></button>
+        </div>
+      </section>
+    </main>
+
+    <footer></footer>
   </body>
 </html>
-
