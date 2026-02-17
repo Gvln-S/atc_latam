@@ -110,8 +110,8 @@ export function initCarrusel(trackId) {
       else if (Math.abs(i - currentIndex) === 1) card.classList.add('side');
     });
 
-    const cardWidth = 190; 
-    const offset = -(currentIndex * cardWidth) - 130;
+    const cardWidth = 215; 
+    const offset = -(currentIndex * cardWidth) - 150;
 
     track.style.transform = `translateX(${offset}px)`;
 
