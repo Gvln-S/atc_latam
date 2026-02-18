@@ -1,31 +1,11 @@
-import { initCarrusel } from './components/carrusel.js';
+import { Carousel } from './components/carrusel.js';
+import { MegaMenu } from './components/menu.js';
 
-let timer;
-
-async function start() {
-    const control = initCarrusel('carrusel_track');
-    const pauseBtn = document.getElementById('pause_button');
-
-    const resetTimer = () => {
-        clearInterval(timer);
-        timer = setInterval(() => {
-            if (!control.isPaused()) control.next();
-        }, 10000); 
-    };
-
-    control.setOnInteraction(resetTimer);
-
-    document.getElementById('next_button').onclick = () => { control.next(); resetTimer(); };
-    document.getElementById('prev_button').onclick = () => { control.prev(); resetTimer(); };
+document.addEventListener('DOMContentLoaded', () => {
     
-    pauseBtn.onclick = () => {
-        const isPaused = control.togglePause();
-        pauseBtn.classList.toggle('paused', isPaused);
-        if (!isPaused) resetTimer();
-        else clearInterval(timer);
-    };
+    const carousel = new Carousel('.hero_slider', '.slider_track', '.slide_item', 10000);
+    carousel.init();
 
-    resetTimer();
-}
-
-start();
+    const menu = new MegaMenu();
+    menu.init();
+});

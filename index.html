@@ -10,50 +10,121 @@
   <body>
     <header>
       <article class="atc_logo">
-        <button>
-          <div class="burger_menu">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
+        <img src="img/general/atc_icon.png" alt="ATC Logo">
+      </article>
+
+      <article class="atc_services">
+        <a href="#">Boletines</a>
+
+        <button id="servicios_trigger" class="services_btn">
+          Servicios <span class="arrow_icon" style="display:inline-block; transition:0.3s">&lt;</span>
         </button>
-        <a>
-          <img src="img/general/atc_icon.png">
-        </a>
+
+        <a href="#">Fechas impuestos</a>
+        <a href="#">Contacto</a>
       </article>
 
       <article class="search_button">
         <button>
-          <div></div>
+          <img src="img/general/search_icon.png">
+          <span></span>
+          <img src="img/general/world_icon.png">
         </button>
       </article>
+
+      <nav id="mega_menu" class="mega_menu">
+        <div class="menu_col">
+          <h4>Auditoría y Control</h4>
+          <ul>
+            <li><a href="#">Auditorías Integrales</a></li>
+            <li><a href="#">Auditorías Internas y Externas</a></li>
+            <li><a href="#">Revisoría Fiscal</a></li>
+            <li><a href="#">Due Diligence Integral</a></li>
+          </ul>
+        </div>
+
+        <div class="menu_col">
+          <h4>Legal y Corporativo</h4>
+          <ul>
+            <li><a href="#">Derecho Corporativo</a></li>
+            <li><a href="#">Fusiones y Adquisiciones</a></li>
+            <li><a href="#">Derecho Laboral</a></li>
+            <li><a href="#">Seguridad Social Integral</a></li>
+          </ul>
+        </div>
+
+        <div class="menu_col">
+          <h4>Impuestos y Finanzas</h4>
+          <ul>
+            <li><a href="#">Asesoría Tributaria</a></li>
+            <li><a href="#">Planeación Fiscal</a></li>
+            <li><a href="#">Asesoría Financiera</a></li>
+            <li><a href="#">Estudios de Proyección</a></li>
+          </ul>
+        </div>
+
+        <div class="menu_col">
+          <h4>Outsourcing</h4>
+          <ul>
+            <li><a href="#">Contabilidad Financiera</a></li>
+            <li><a href="#">Gestión Tributaria</a></li>
+            <li><a href="#">Outsourcing Integral</a></li>
+            <li><a href="#">Outsourcing de Gestión</a></li>
+          </ul>
+        </div>
+
+        <div class="menu_col">
+          <h4>Especialidades</h4>
+          <ul>
+            <li><a href="#">Marcas y Patentes</a></li>
+            <li><a href="#">Propiedad Intelectual</a></li>
+            <li><a href="#">Derecho Medio Ambiental</a></li>
+            <li><a href="#">Trámites Nacionales</a></li>
+          </ul>
+        </div>
+      </nav>
     </header>
 
+    <div id="menu_overlay" class="menu_overlay"></div> 
+    <div id="menu_overlay" class="menu_overlay"></div>
     <main>
-      <section class="boletines_section">
-        <div class="boletines_titles">
-          <h2 class="h2_module_header">BIENVENIDO A ATC LATAM</h2>
-          <h1 class="h1_main_title">Mantente al tanto de las últimas noticias con nuestros Boletines</h1>
-        </div>
-        
-        <div class="carrusel_viewport">
-          <div id="carrusel_track" class="carrusel_track"></div>
+      <section id="hero_slider" class="hero_slider">
+        <h1 class="hero_title">Nuestros Servicios</h1>
+
+        <button class="nav_arrow prev_btn">
+          <img src="img/general/left_arrow.png" alt="<"> </button>
+
+        <div class="slider_window">
+          <div class="slider_track">
+            <article class="slide_item active" data-bg="./img/boletines/febrero.jpeg">
+              <div class="content"><h3>Auditoría</h3><span class="arrow">→</span></div>
+            </article>
+
+            <article class="slide_item" data-bg="./img/boletines/marzo.jpeg">
+              <div class="content"><h3>Legal</h3><span class="arrow">→</span></div>
+            </article>
+
+            <article class="slide_item" data-bg="./img/boletines/julio.jpeg">
+              <div class="content"><h3>Revisoría Fiscal</h3><span class="arrow">→</span></div>
+            </article>
+
+            <article class="slide_item" data-bg="./img/boletines/mayo.jpeg">
+              <div class="content"><h3>Contabilidad</h3><span class="arrow">→</span></div>
+            </article>
+
+            <article class="slide_item" data-bg="./img/boletines/junio.jpeg">
+              <div class="content"><h3>Due Diligence</h3><span class="arrow">→</span></div>
+            </article>
+          </div>
         </div>
 
-        <div class="carrusel_controls">
-          <button id="pause_button" class="ctrl_btn pause_button"></button>
-          <button id="prev_button" class="ctrl_btn prev_button"></button>
-          <button id="next_button" class="ctrl_btn next_button"></button>
-        </div>
+        <button class="nav_arrow next_btn">
+          <img src="img/general/right_arrow.png" alt=">"> </button>
       </section>
     </main>
-    <section class="services_section">
-      <h2>Servicios de ATC LATAM</h2>
-      <a>Auditorías</a>
-      <a>Legal</a>
-      <a>Revisoría Fiscal</a>
-      <a>Contabilidad Outsourcing</a>
-    </section>
-    <footer></footer>
+
+    <footer>
+
+    </footer>
   </body>
 </html>
