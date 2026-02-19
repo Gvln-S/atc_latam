@@ -36,7 +36,7 @@ body > header {
 
   padding: var(--general-padding-margin);
 
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.95);
   z-index: 1000;
 }
 
@@ -233,7 +233,7 @@ body > main > section.hero_slider > h1.hero_title {
   margin: var(--general-padding-margin);
   
   font-size: 4rem;
-  font-weight: 100;
+  font-weight: 300;
   color: var(--text-color);
   
   z-index: 10;
@@ -296,8 +296,8 @@ body > main > section.hero_slider > div.slider_window > div.slider_track {
 }
 
 body > main > section.hero_slider > div.slider_window > div.slider_track > article.slide_item {
-  min-width: 25%; 
-  max-width: 25%; 
+  min-width: 30%; 
+  max-width: 30%; 
   flex-shrink: 0;
   flex-grow: 1;
   height: 100%;
@@ -349,4 +349,62 @@ div.slider_track > article.slide_item > div.content > span.arrow {
 
 div.slider_track > article.slide_item:hover > div.content > span.arrow {
   transform: translateX(10px);
+}
+
+/* atg goals */
+main > section.atc_goals {
+  display: grid;
+  grid-template-columns: 55% 45%;
+
+  margin: var(--general-padding-margin);
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+main > section.atc_goals > img {
+  width: 100%;
+  
+  border-radius: 20px;
+}
+
+main > section.atc_goals > article {
+ padding-left: 20px;
+}
+
+main > section.atc_goals div {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 95%
+}
+
+main > section.atc_goals h4{
+  font-size: 13px;
+  text-transform: uppercase;
+
+}
+
+main > section.atc_goals h3{
+  font-size: 50px;
+  font-weight: lighter;
+
+  padding: 20px 0;
+}
+
+main > section.atc_goals p{
+  font-size: 18px;
+  font-weight: lighter;
+}
+
+main > section.atc_goals button{
+  background: var(--azul-real);
+
+  border-radius: 15px;
+  border: none;
+  padding: 15px 30px;
+
+  font-size: 16px;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 500;
 }
