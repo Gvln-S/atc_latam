@@ -54,6 +54,10 @@ body > header > article.atc_services {
 
 body > header > article.atc_services > a,
 body > header > article.atc_services > button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
   color: var(--azul-real);
   font-size: 18px;
   font-weight: 400;
@@ -63,12 +67,30 @@ body > header > article.atc_services > button {
   text-decoration: none;
 }
 
+body > header > article.atc_services > button > span.mobile_arrow {
+  margin-right: 0;  
+  margin-left: 8px;  
+
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid var(--azul-real);
+  border-bottom: 2px solid var(--azul-real);
+  transform: rotate(45deg);
+  transition: transform 0.3s;
+}
+
 body > header > article.atc_services > a:hover,
 body > header > article.atc_services > button:hover {
   text-decoration: underline;
   color: var(--cian-vibrante);
 }
 
+body > header > article.atc_services > button:hover > span.mobile_arrow {
+  transform: rotate(-135deg);
+
+  border-right: 2px solid var(--cian-vibrante);
+  border-bottom: 2px solid var(--cian-vibrante);
+}
 body > header > article.atc_services > button.dropdown_trigger {
   display: flex;
   align-items: center;
@@ -351,7 +373,7 @@ div.slider_track > article.slide_item:hover > div.content > span.arrow {
   transform: translateX(10px);
 }
 
-/* atg goals */
+/* atc goals */
 main > section.atc_goals {
   display: grid;
   grid-template-columns: 55% 45%;
@@ -375,17 +397,18 @@ main > section.atc_goals div {
   display: inline-flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 95%
+  height: 95%;
 }
 
 main > section.atc_goals h4{
   font-size: 13px;
   text-transform: uppercase;
 
+  color: var(--azul-real);
 }
 
 main > section.atc_goals h3{
-  font-size: 50px;
+  font-size: 2.5rem;
   font-weight: lighter;
 
   padding: 20px 0;
@@ -394,9 +417,11 @@ main > section.atc_goals h3{
 main > section.atc_goals p{
   font-size: 18px;
   font-weight: lighter;
+  
+  text-align: justify;
 }
 
-main > section.atc_goals button{
+main > section.atc_goals button {
   background: var(--azul-real);
 
   border-radius: 15px;
@@ -407,6 +432,87 @@ main > section.atc_goals button{
   color: #fff;
   text-transform: uppercase;
   font-weight: 500;
+}
+
+main > section.atc_goals button:hover {
+  background: var(--azul-oscuro);
+}
+
+body > main > section.hero_slider > button.nav_arrow > img {
+  width: 30px;
+  height: 30px;
+  pointer-events: none;
+}
+
+body > main > section.hero_slider > div.slider_window {
+  width: 100%;
+  height: 100%;
+  overflow: hidden; 
+  position: relative;
+  z-index: 1;
+}
+
+body > main > section.hero_slider > div.slider_window > div.slider_track {
+  display: flex;
+  height: 100%;
+  width: 100%; 
+  transition: translateX(0);
+}
+
+body > main > section.hero_slider > div.slider_window > div.slider_track > article.slide_item {
+  min-width: 30%; 
+  max-width: 30%; 
+  flex-shrink: 0;
+  flex-grow: 1;
+  height: 100%;
+
+  border-right: 1px solid rgba(255, 255, 255, 0.8);
+  background-color: var(--inactive-overlay);
+  backdrop-filter: blur(2px); 
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  padding: var(--general-padding-margin);
+  cursor: pointer;
+
+  transition: background-color 0.3s ease, min-width 0.3s ease;
+}
+
+body > main > section.hero_slider > div.slider_window > div.slider_track > article.slide_item.active {
+  background-color: rgba(40, 52, 138, 0.5);
+  backdrop-filter: none; 
+}
+
+div.slider_track > article.slide_item > div.content {
+  color: var(--text-color);
+
+  transform: translateY(0);
+  transition: transform 0.3s ease;
+
+  margin-bottom: 40px;
+}
+
+div.slider_track > article.slide_item > div.content > h3 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+
+  margin-bottom: 10px;
+}
+
+div.slider_track > article.slide_item > div.content > span.arrow {
+  font-size: 1.5rem;
+  font-weight: bold;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+div.slider_track > article.slide_item:hover > div.content > span.arrow {
+  transform: translateX(10px);
 }
 
 /* mobile_menu */
@@ -482,7 +588,9 @@ div.accordion_header {
   text-decoration: none;
 }
 
-div.accordion_header span.mobile_arrow {
+span.mobile_arrow {
+  margin-right: 8px;
+
   width: 10px;
   height: 10px;
   border-right: 2px solid var(--azul-real);
@@ -511,10 +619,13 @@ ul.mobile_submenu div.sub_accordion_header {
   display: flex;
   justify-content: space-between;
   padding: 15px 0;
-  color: var(--azul-real);
+  color: #000;
   font-weight: 600;
 }
 
+ul.mobile_submenu div.sub_accordion_header:hover {
+  color: var(--cian-vibrante);
+}
 li.has_sub_accordion.active div.sub_accordion_header span.mobile_arrow {
   transform: rotate(-135deg);
 }
@@ -527,6 +638,9 @@ ul.mobile_submenu > li > ul.mobile_deep_menu {
   transition: max-height 0.3s ease;
 }
 
+ul.mobile_submenu > li > ul.mobile_deep_menu > li:hover > a {
+  color: var(--cian-vibrante);
+}
 li.has_sub_accordion.active > ul.mobile_deep_menu {
   max-height: 500px;
 }
@@ -538,7 +652,44 @@ ul.mobile_deep_menu > li > a {
   text-decoration: none;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 1024px) {
+  main > section.atc_goals {
+    grid-template-columns: 1fr;
+  } 
+
+  main > section.atc_goals > article {
+    padding: 0px;
+  }
+
+  main > section.atc_goals div {
+    height: auto;
+  }
+
+  main > section.atc_goals h4{
+    padding-top: 10px;
+  }
+
+  main > section.atc_goals h3{
+    padding: 0;
+    padding-top: 5px;
+    font-weight: 300;
+  }
+
+  main > section.atc_goals p{
+    padding-top: 10px;
+    font-weight: 300; 
+  }
+
+  main > section.atc_goals button{
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 960px) {
+  body > header {
+    background: #fff;
+  }
+
   body > header > article.atc_services {
     display: none;
   }
@@ -556,20 +707,40 @@ ul.mobile_deep_menu > li > a {
   }
 
   article.search_button {
-    width: 90px;
+    width: 95px;
     height: auto;
+
     display: flex;
     justify-content: center;
     align-items: center;
+
     border: none;
     border-radius: none;
     background: none;
+
     gap: 15px;
     cursor: pointer;
   }
 
   article.search_button > img {
-    width: 20px;
-    height: 20px;
+    width: 23px;
+    height: 23px;
+  }
+}
+
+@media (max-width: 950px) {
+  body > main > section.hero_slider > div.slider_window > div.slider_track > article.slide_item {
+    min-width: 50%;
+    min-height: 70%;
+  }
+}
+
+@media (max-height: 800px) {
+  body > header {
+    height: 80px;
+  }
+
+  header > nav.mobile_sidebar {
+    top: 80px;
   }
 }
